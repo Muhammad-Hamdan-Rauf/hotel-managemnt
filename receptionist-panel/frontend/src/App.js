@@ -2,13 +2,15 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { 
   createBrowserRouter, 
   RouterProvider, 
-  Route, 
+  Route,
   createRoutesFromElements, 
   Navigate,
   Outlet 
 } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import Login from './receptionistpages/Login';
+import GuestManagement from './receptionistpages/GuestManagment';
+import ReceptionistDashboard from './receptionistpages/ReceptionistDashboard';
 import Signup from './receptionistpages/Signup';
 import RootLayout from './receptionistpages/RootLayout'; // New component for layout
 
@@ -90,7 +92,15 @@ const App = () => {
             index: true,
             element: (
               <ProtectedRoute isAuthenticated={isAuthenticated} loading={loading}>
-                <RootLayout />
+                <ReceptionistDashboard />
+              </ProtectedRoute>
+            ),
+          },
+          {
+            path: 'guest-management',
+            element: (
+              <ProtectedRoute isAuthenticated={isAuthenticated} loading={loading}>
+                <GuestManagement />
               </ProtectedRoute>
             ),
           },

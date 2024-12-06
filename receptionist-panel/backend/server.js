@@ -3,6 +3,8 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/dbConfig');
 const authRoutes = require('./routes/authRoutes');
+const guestRoutes = require('./routes/guestRoutes');
+
 const { errorHandler } = require('./middlewares/errorMiddleware');
 
 dotenv.config();
@@ -14,6 +16,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/auth', authRoutes);
+app.use('/guests', guestRoutes);
+
 
 
 // Error handler

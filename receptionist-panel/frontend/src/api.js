@@ -63,3 +63,50 @@ export const googleLogin = async (credential) => {
     throw handleApiError(error);
   }
 };
+
+
+// Guest API functions
+export const addGuest = async (guestData) => {
+  try {
+    const response = await API.post('/guests/add', guestData);
+    return response;
+  } catch (error) {
+    throw handleApiError(error);
+  }
+};
+
+export const editGuest = async (id, updates) => {
+  try {
+    const response = await API.put(`/guests/edit/${id}`, updates);
+    return response;
+  } catch (error) {
+    throw handleApiError(error);
+  }
+};
+
+export const deleteGuest = async (id) => {
+  try {
+    const response = await API.delete(`/guests/delete/${id}`);
+    return response;
+  } catch (error) {
+    throw handleApiError(error);
+  }
+};
+
+export const fetchAllGuests = async () => {
+  try {
+    const response = await API.get('/guests/all');
+    return response;
+  } catch (error) {
+    throw handleApiError(error);
+  }
+};
+
+export const getGuestBookings = async (guestId) => {
+  try {
+    const response = await API.get(`/guests/${guestId}/bookings`);
+    return response;
+  } catch (error) {
+    throw handleApiError(error);
+  }
+};

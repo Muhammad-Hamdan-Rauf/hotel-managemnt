@@ -31,18 +31,11 @@ const AppSidebar = ({ isSidebarOpen, toggleSidebar, drawerWidth = 240 }) => {
 
   const menuItems = [
     { text: "Home", icon: <HomeIcon />, path: "/" },
+
     {
-      text: "Staff Management",
+      text: "Guest Management",
       icon: <DashboardIcon />,
-      children: [
-        { text: "Manage Staff", path: "/dashboard/staff-management" },
-        { text: "Notify Staff", path: "/dashboard/NotifyStaff" },
-      ],
-    },
-    {
-      text: "Room Management",
-      icon: <DashboardIcon />,
-      path: "/dashboard/room-managment" ,
+      path: "/dashboard/guest-management" ,
     },
     {
       text: "Service Management",

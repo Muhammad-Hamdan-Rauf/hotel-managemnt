@@ -98,11 +98,8 @@ const Dashboard = () => {
               ml: "auto", // Push to the right for all screen sizes
             }}
           >
-            <Typography variant="subtitle1" sx={{ color: "white" }}>
-              {username}
-            </Typography>
             <IconButton onClick={handleMenuOpen}>
-              <Avatar alt={username} src="/static/images/avatar/1.jpg" />
+              <Avatar src="/static/images/avatar/1.jpg" />
             </IconButton>
             <Menu
               anchorEl={anchorEl}
