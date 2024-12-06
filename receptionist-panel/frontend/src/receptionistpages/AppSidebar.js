@@ -38,16 +38,15 @@ const AppSidebar = ({ isSidebarOpen, toggleSidebar, drawerWidth = 240 }) => {
       path: "/dashboard/guest-management" ,
     },
     {
-      text: "Service Management",
+      text: "Room Management",
       icon: <DashboardIcon />,
-      path: "/dashboard/service-managment" ,
+      path: "/dashboard/rooms-management" ,
     },
     {
-      text: "Booking History",
+      text: "Check IN",
       icon: <DashboardIcon />,
-      path: "/dashboard/booking-history" ,
+      path: "/dashboard/checkIN" ,
     },
-    
     {
       text: "System Logs",
       icon: <DashboardIcon />,

@@ -82,8 +82,8 @@ exports.getGuestBookings = async (req, res) => {
     // Fetch all bookings for the specific guest (use the guest's User ID)
     const bookings = await Booking.find({ guest: guestId })
       .populate('room') // Populate the associated Room details
-      .populate('checkInDetails.checkInTime') // Populate the receptionist who checked in the guest
-      .populate('checkOutDetails.checkOutTime')
+      .populate('checkInDate') // Populate the receptionist who checked in the guest
+      .populate('checkOutDate')
       .populate('totalAmount')
       .populate('status');
 

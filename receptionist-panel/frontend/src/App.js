@@ -13,7 +13,8 @@ import GuestManagement from './receptionistpages/GuestManagment';
 import ReceptionistDashboard from './receptionistpages/ReceptionistDashboard';
 import Signup from './receptionistpages/Signup';
 import RootLayout from './receptionistpages/RootLayout'; // New component for layout
-
+import RoomManagement from './receptionistpages/RoomManagement';
+import CheckIn from './receptionistpages/CheckIn';
 
 // Protected Route Component
 const ProtectedRoute = ({ children, isAuthenticated, loading }) => {
@@ -101,6 +102,22 @@ const App = () => {
             element: (
               <ProtectedRoute isAuthenticated={isAuthenticated} loading={loading}>
                 <GuestManagement />
+              </ProtectedRoute>
+            ),
+          },
+          {
+            path: 'rooms-management',
+            element: (
+              <ProtectedRoute isAuthenticated={isAuthenticated} loading={loading}>
+                <RoomManagement />
+              </ProtectedRoute>
+            ),
+          },
+          {
+            path: 'checkIN',
+            element: (
+              <ProtectedRoute isAuthenticated={isAuthenticated} loading={loading}>
+                <CheckIn />
               </ProtectedRoute>
             ),
           },

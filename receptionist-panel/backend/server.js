@@ -4,7 +4,8 @@ const cors = require('cors');
 const connectDB = require('./config/dbConfig');
 const authRoutes = require('./routes/authRoutes');
 const guestRoutes = require('./routes/guestRoutes');
-
+const roomRoute =require('./routes/roomRoutes');
+const bookingRoutes =require('./routes/bookingRoutes');
 const { errorHandler } = require('./middlewares/errorMiddleware');
 
 dotenv.config();
@@ -17,6 +18,8 @@ app.use(cors());
 app.use(express.json());
 app.use('/auth', authRoutes);
 app.use('/guests', guestRoutes);
+app.use('/room-manage', roomRoute);
+app.use('/bookings', bookingRoutes);
 
 
 

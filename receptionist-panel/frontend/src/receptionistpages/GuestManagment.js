@@ -97,11 +97,11 @@ const GuestManagement = () => {
       // Process and format booking data if necessary, to make it easier to display
       const formattedBookings = bookings.map((booking) => ({
         ...booking,
-        checkInTime: booking.checkInDetails?.checkInTime
-          ? new Date(booking.checkInDetails.checkInTime).toLocaleString()
+        checkInTime: booking.checkInDate
+          ? new Date(booking.checkInDate).toLocaleString()
           : 'Not available',
-        checkOutTime: booking.checkOutDetails?.checkOutTime
-          ? new Date(booking.checkOutDetails.checkOutTime).toLocaleString()
+        checkOutTime: booking.checkOutDate
+          ? new Date(booking.checkOutDate).toLocaleString()
           : 'Not available',
         room: booking.room?.roomNumber || 'No room data',
         totalAmount: booking.checkOutDetails?.settledAmount || booking.totalAmount,

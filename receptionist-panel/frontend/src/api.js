@@ -110,3 +110,44 @@ export const getGuestBookings = async (guestId) => {
     throw handleApiError(error);
   }
 };
+
+
+export const fetchAllRoomsManage = async () => {
+  try {
+    const response = await API.get('/room-manage/all');
+    return response;
+  } catch (error) {
+    throw handleApiError(error);
+  }
+};
+
+export const fetchAvailableRooms = async () => {
+  try {
+    const response = await API.get('/room-manage/available');
+    return response;
+  } catch (error) {
+    throw handleApiError(error);
+  }
+};
+
+
+// Room API functions
+export const updateRoomStatus = async (roomId, updates) => {
+  try {
+    const response = await API.put(`/room-manage/updateStatus/${roomId}`, updates);
+    return response;  // Returns the updated room data
+  } catch (error) {
+    throw handleApiError(error);
+  }
+};
+
+
+// Create a new booking
+export const createBooking = async (bookingData) => {
+  try {
+    const response = await API.post('/bookings/create', bookingData);
+    return response; // Returns the booking details
+  } catch (error) {
+    throw handleApiError(error);
+  }
+};
