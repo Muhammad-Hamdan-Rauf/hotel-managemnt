@@ -6,6 +6,7 @@ const authRoutes = require('./routes/authRoutes');
 const guestRoutes = require('./routes/guestRoutes');
 const roomRoute =require('./routes/roomRoutes');
 const bookingRoutes =require('./routes/bookingRoutes');
+const serviceRequestRoutes =require('./routes/serviceRequestRoutes');
 const { errorHandler } = require('./middlewares/errorMiddleware');
 
 dotenv.config();
@@ -20,6 +21,7 @@ app.use('/auth', authRoutes);
 app.use('/guests', guestRoutes);
 app.use('/room-manage', roomRoute);
 app.use('/bookings', bookingRoutes);
+app.use('/service-requests', serviceRequestRoutes);
 
 
 

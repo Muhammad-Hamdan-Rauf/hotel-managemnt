@@ -43,14 +43,25 @@ const AppSidebar = ({ isSidebarOpen, toggleSidebar, drawerWidth = 240 }) => {
       path: "/dashboard/rooms-management" ,
     },
     {
-      text: "Check IN",
+      text: "Check In",
       icon: <DashboardIcon />,
       path: "/dashboard/checkIN" ,
     },
     {
-      text: "System Logs",
+      text: "Check Out",
       icon: <DashboardIcon />,
-      path: "/dashboard/systemLogs" ,
+      path: "/dashboard/checkout" ,
+    },
+    {
+      text: "Booking Managmenet",
+      icon: <DashboardIcon />,
+      path: "/dashboard/booking-management" ,
+    },
+    
+    {
+      text: "Sevices Request",
+      icon: <DashboardIcon />,
+      path: "/dashboard/ServiceRequest-management" ,
     },
     {
       text: "Weather Conditions",

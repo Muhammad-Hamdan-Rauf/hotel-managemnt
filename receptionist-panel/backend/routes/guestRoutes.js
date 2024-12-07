@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { createGuest, editGuest, deleteGuest, getAllGuests, getGuestBookings } = require('../controllers/guestController');
+const { createGuest, editGuest, deleteGuest, getAllGuests, getGuestBookings, getGuestById } = require('../controllers/guestController');
 const authMiddleware = require('../middlewares/authMiddleware');
 const receptionistMiddleware = require('../middlewares/receptionistMiddleware');
 const logMiddleware = require('../middlewares/logMiddleware');
@@ -23,7 +23,9 @@ router.delete('/delete/:id', deleteGuest);
 router.get('/all', getAllGuests);
 
 // Route to get a guest's booking history
-router.get('/:id/bookings', getGuestBookings);
+router.get('/:id/bookings', getGuestBookings);  
+
+router.get('/:id',getGuestById);
 
 
 module.exports = router;

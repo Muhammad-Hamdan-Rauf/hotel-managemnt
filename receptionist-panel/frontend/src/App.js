@@ -15,7 +15,9 @@ import Signup from './receptionistpages/Signup';
 import RootLayout from './receptionistpages/RootLayout'; // New component for layout
 import RoomManagement from './receptionistpages/RoomManagement';
 import CheckIn from './receptionistpages/CheckIn';
-
+import CheckOut from './receptionistpages/CheckOut';
+import BookingManagment from './receptionistpages/BookingManagment';
+import ServiceRequestManagement from './receptionistpages/ServicesRequest';
 // Protected Route Component
 const ProtectedRoute = ({ children, isAuthenticated, loading }) => {
   if (loading) {
@@ -98,6 +100,23 @@ const App = () => {
             ),
           },
           {
+            path: 'checkIN',
+            element: (
+              <ProtectedRoute isAuthenticated={isAuthenticated} loading={loading}>
+                <CheckIn />
+              </ProtectedRoute>
+            ),
+          },
+          
+          {
+            path: 'checkout',
+            element: (
+              <ProtectedRoute isAuthenticated={isAuthenticated} loading={loading}>
+                <CheckOut />
+              </ProtectedRoute>
+            ),
+          },
+          {
             path: 'guest-management',
             element: (
               <ProtectedRoute isAuthenticated={isAuthenticated} loading={loading}>
@@ -114,14 +133,22 @@ const App = () => {
             ),
           },
           {
-            path: 'checkIN',
+            path: 'booking-management',
             element: (
               <ProtectedRoute isAuthenticated={isAuthenticated} loading={loading}>
-                <CheckIn />
+                <BookingManagment />
               </ProtectedRoute>
             ),
           },
-
+          
+          {
+            path: 'ServiceRequest-management',
+            element: (
+              <ProtectedRoute isAuthenticated={isAuthenticated} loading={loading}>
+                <ServiceRequestManagement />
+              </ProtectedRoute>
+            ),
+          },
           // You can add more nested routes here
         ],
       },

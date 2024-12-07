@@ -111,6 +111,18 @@ export const getGuestBookings = async (guestId) => {
   }
 };
 
+// Guest API functions
+
+// Fetch guest by ID (new function)
+export const getGuestById = async (guestId) => {
+  try {
+    const response = await API.get(`/guests/${guestId}`);
+    return response;
+  } catch (error) {
+    throw handleApiError(error);
+  }
+};
+
 
 export const fetchAllRoomsManage = async () => {
   try {
@@ -147,6 +159,38 @@ export const createBooking = async (bookingData) => {
   try {
     const response = await API.post('/bookings/create', bookingData);
     return response; // Returns the booking details
+  } catch (error) {
+    throw handleApiError(error);
+  }
+};
+
+
+// Create a new booking
+export const fetchBookings = async () => {
+  try {
+    const response = await API.get('/bookings/');
+    return response; // Returns the booking details
+  } catch (error) {
+    throw handleApiError(error);
+  }
+};
+
+
+// Fetch all service requests
+export const fetchAllServiceRequests = async () => {
+  try {
+    const response = await API.get('/service-requests');
+    return response;
+  } catch (error) {
+    throw handleApiError(error);
+  }
+};
+
+// Update service request status
+export const updateServiceRequestStatus = async (requestId, newStatus) => {
+  try {
+    const response = await API.patch(`/service-requests/${requestId}`, { status: newStatus });
+    return response;
   } catch (error) {
     throw handleApiError(error);
   }

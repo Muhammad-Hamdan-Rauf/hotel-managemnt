@@ -97,3 +97,23 @@ exports.getGuestBookings = async (req, res) => {
     res.status(500).json({ message: 'Failed to fetch booking history. Please try again later.' });
   }
 };
+
+
+// Fetch guest by ID
+exports.getGuestById = async (req, res) => {
+  try {
+    const guestId = req.params.id;
+
+    // Find guest by ID
+    const guest = await User.findById(guestId);
+
+    if (!guest) {
+      return res.status(404).json({ message: 'Guest not found' });
+    }
+
+    res.status(200).json({ guest });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Failed to fetch guest details. Please try again later.' });
+  }
+};
